@@ -18,10 +18,10 @@
   margin-top: 30px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 492px) {
   .popup__item {
       
-    width: 238px;
+    max-width: 238px;
     
   }
       
