@@ -8,6 +8,10 @@
     margin: 0;
     margin-right: 18px;
     text-align: end;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     
 }
 

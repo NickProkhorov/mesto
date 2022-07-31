@@ -10,6 +10,7 @@ let popupForm = popupNode.querySelector('.popup__form');
 
 let inputName = popupForm.querySelector('.popup__item_name');
 let inputJob = popupForm.querySelector('.popup__item_job');
+let saveProfile = popupForm.querySelector('.popup__button');
 
 function setPopupInputValue() { 
     inputName.value = profileName.textContent.trim();
@@ -37,11 +38,17 @@ function popupClose() {
        console.log('выключил');
     } 
 
+function setProfileDescClosePopup() {
+    setProfileDesc();
+    popupClose();
+    console.log('выключил');
+
+}    
+
 editProfile.addEventListener ('click', popupOpen);
-
 popupNodeClose.addEventListener ('click', popupClose);
-
 popupForm.addEventListener('submit', formSubmitHandler);
+saveProfile.addEventListener('click', setProfileDescClosePopup);
 
 
 
