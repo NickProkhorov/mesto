@@ -1,0 +1,8 @@
+.element__label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-left: 21px;
+    margin-right: 20px;
+}
