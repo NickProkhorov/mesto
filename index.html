@@ -31,66 +31,68 @@
             <div class="element">
               <img class="element__image" src="./images/italy.jpg" alt="побережье италии">
               <div class="element__label">
-                  <p class="element__title">Побережье Италии</p>
+                  <h3 class="element__title">Побережье Италии</h3>
                   <button class="element__like" type="button"></button>
               </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/tyrkey.jpg" alt="побережье турции">
                 <div class="element__label">
-                    <p class="element__title">Побережье Турции</p>
+                    <h3 class="element__title">Побережье Турции</h3>
                     <button class="element__like" type="button"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/kazan.jpg" alt="казанский кремль">
                 <div class="element__label">
-                    <p class="element__title">Казанский Кремль</p>
+                    <h3 class="element__title">Казанский Кремль</h3>
                     <button class="element__like" type="button"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/kazanskii-sobor.jpg" alt="Казанский собор. Санкт-Петербург">
                 <div class="element__label">
-                    <p class="element__title">Казанский Собор</p>
+                    <h3 class="element__title">Казанский Собор</h3>
                     <button class="element__like" type="button"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/krasnaya-polyana.jpg" alt="Красная поляна">
                 <div class="element__label">
-                    <p class="element__title">Красная Поляна</p>
+                    <h3 class="element__title">Красная Поляна</h3>
                     <button class="element__like" type="button"></button>
                 </div>
             </div>
             <div class="element">
                 <img class="element__image" src="./images/siberia.jpg" alt="Где-то в западной сибири зимой">
                 <div class="element__label">
-                    <p class="element__title">Югорск</p>
+                    <h3 class="element__title">Югорск</h3>
                     <button class="element__like" type="button"></button>
                 </div>
             </div>
         </section>
         <section class="popup">
+          <div class="popup__overlay">  
             <div class="popup__container">
-              <form class="popup__form">
-                <h2 class="popup__heading">Редактировать профиль</h2>
+            <h2 class="popup__heading">Редактировать профиль</h2>
+              <form class="popup__form" name="edit-profile">
                 <fieldset class="popup__input-container">
-                  <input type="text" name ="profileName" class="popup__item popup__item_name">
-                  <input type="text" name ="profileDesc" class="popup__item popup__item_job">
+                  <input type="text" name ="profileName" class="popup__item popup__item_type_name">
+                  <input type="text" name ="profileDesc" class="popup__item popup__item_type_job">
                 </fieldset>
                 <fieldset class="popup__handlers">
                     <input type="submit" value="Сохранить" class="popup__button">
                 </fieldset>
-                <button class="popup__closed" type="button"></button>
-              </form>  
-            </div>    
+              </form> 
+              <button class="popup__closed" type="button"></button> 
+            </div>
+          </div>      
         </section>   
     </main>
     
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-  <script src="index.js"></script>  
+  <script src="./scripts/index.js"></script>  
   </body>
 </html>    

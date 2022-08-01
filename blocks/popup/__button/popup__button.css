@@ -6,6 +6,7 @@
     border: 0;
     margin: 0;
     margin-top: 48px;
+    margin-bottom: 37px;
     padding: 0;
     cursor: pointer;
     color: white;
@@ -22,10 +23,9 @@
         font-size: 14px;
         line-height: 17px;
         margin-top: 45px;
+        margin-bottom: 25px;
         width: 238px;
         height: 46px;
-        
-      
     }
         
   }
