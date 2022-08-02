@@ -32,7 +32,6 @@ function popupOpen() {
 
 function popupClose() {
     popupNode.classList.remove('popup_opened');
-       
 } 
 
 editProfile.addEventListener ('click', popupOpen);
