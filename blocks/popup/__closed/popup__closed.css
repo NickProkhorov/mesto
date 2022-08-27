@@ -1,4 +1,4 @@
-.popup__closed {
+.popup__closed{
    position: absolute;
    right: -40px;
    top: -40px;
@@ -21,8 +21,8 @@
       right: 0px;
       top: -35px;
       width: 20px;
-      height: 20px; 
-      background-size: contain;     
+      height: 20px;
+      background-size: contain;    
    }
 }
 
