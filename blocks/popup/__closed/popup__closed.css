@@ -4,6 +4,7 @@
    top: -40px;
    background-image:url(../../../images/popup-closed.svg);
    background-color: transparent;
+   background-repeat: no-repeat;
    width: 32px;
    height: 32px;
    border: 0;

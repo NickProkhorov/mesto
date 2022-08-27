@@ -3,10 +3,10 @@
     max-height: 75vh;
     background-repeat: no-repeat;
     object-fit: contain;
-    padding-right: 19px;
+    margin: auto;    
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 492px) {
     .popup__image {
       max-width: 282px;
     }
