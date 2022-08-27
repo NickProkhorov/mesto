@@ -16,12 +16,13 @@
     cursor: pointer;
  }
 
- @media screen and (max-width: 492px) {
+ @media screen and (max-width: 656px) {
    .popup__closed {
       right: 0px;
       top: -35px;
       width: 20px;
-      height: 20px;
-      background-size: contain;  
+      height: 20px; 
+      background-size: contain;     
    }
 }
+

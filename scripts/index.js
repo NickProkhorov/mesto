@@ -2,28 +2,26 @@
 const page = document.querySelector('.page');
 
 const popupEditprofile = document.querySelector('.popup_type_edit-account');
-const editProfileForm = popupEditprofile.querySelector('.popup__form');
+const profileFormEdit = popupEditprofile.querySelector('.popup__form');
 const inputName = popupEditprofile.querySelector('.popup__item_type_name');
 const inputJob = popupEditprofile.querySelector('.popup__item_type_job');
-const closeProfileForm = popupEditprofile.querySelector('.popup__closed');
+const profileFormClose = popupEditprofile.querySelector('.popup__closed');
 
 const popupImage = document.querySelector('.popup_type_image');
 const popupScaleImage = popupImage.querySelector('.popup__image');
 const popupImageTitle = popupImage.querySelector('.popup__image-title');
-const closePopupImage = popupImage.querySelector('.popup__closed');
+const popupImageClose = popupImage.querySelector('.popup__closed');
 
-
-const editProfile = document.querySelector('.profile__edit-profile');
+const profileEdit = document.querySelector('.profile__edit-profile');
 const profileName = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__subtitle');
 
-const openPopupAddCard = document.querySelector('.profile__add-element');
+const popupAddCardOpen = document.querySelector('.profile__add-element');
 
 const popupAddcard = document.querySelector('.popup_type_addcard');
-const createCardForm = popupAddcard.querySelector('.popup__form');
 const cardInputTitle = popupAddcard.querySelector('.popup__item_type_place-name');
 const cardInputLink = popupAddcard.querySelector('.popup__item_type_place-link');
-const closeCardForm = popupAddcard.querySelector('.popup__closed');
+const cardFormClose = popupAddcard.querySelector('.popup__closed');
 
 const cardContainer = document.querySelector('.elements');
 
@@ -80,6 +78,7 @@ function popupClose(modal) {
 function openedImagePopup(link, name) {
     popupScaleImage.src = link;
     popupImageTitle.textContent = name;
+    popupScaleImage.alt = name;
 
     popupOpen(popupImage);
 }
@@ -132,32 +131,32 @@ popupAddcard.addEventListener('submit', function(evt){
 });
 
 
-editProfile.addEventListener('click', function(){
+profileEdit.addEventListener('click', function(){
     setPopupInputValue();
     popupOpen(popupEditprofile);    
 });
 
-openPopupAddCard.addEventListener('click', function(){
+popupAddCardOpen.addEventListener('click', function(){
     clearInputCard();
     popupOpen(popupAddcard);
 });
 
-editProfileForm.addEventListener('submit', function(evt){
+profileFormEdit.addEventListener('submit', function(evt){
     evt.preventDefault();
     setProfileDesc();
     popupClose(popupEditprofile);
 });
 
-closeProfileForm.addEventListener('click', function(){
+profileFormClose.addEventListener('click', function(){
     popupClose(popupEditprofile);
 });
 
-closeCardForm.addEventListener('click', function(){
+cardFormClose.addEventListener('click', function(){
     popupClose(popupAddcard);
     
 });
 
-closePopupImage.addEventListener('click', function(){
+popupImageClose.addEventListener('click', function(){
     popupClose(popupImage);
 });
 
