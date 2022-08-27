@@ -1,0 +1,13 @@
+.popup__image {
+    max-width: 75vh;
+    max-height: 75vh;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    padding-right: 19px;
+}
+
+@media screen and (max-width: 320px) {
+    .popup__image {
+      max-width: 282px;
+    }
+ }

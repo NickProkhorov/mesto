@@ -5,12 +5,17 @@
     background-color: rgb(0, 0, 0, 0.5);
     top: 0;
     left: 0;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility .3s, opacity .3s linear;
 }
 
 @media screen and (max-width: 320px) {
     .popup {
       max-width: 320px;
-      
     }
-  }
+}

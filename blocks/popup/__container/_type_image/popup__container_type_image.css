@@ -1,0 +1,12 @@
+.popup__container_type_image {
+   max-width: 100%;
+   background-color: transparent;
+   padding-left: 19px;
+   padding-right: 19px;
+}
+
+@media screen and (max-width: 320px) {
+   .popup__container_type_image {
+     max-width: 282px;
+   }
+}

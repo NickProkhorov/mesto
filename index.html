@@ -26,54 +26,10 @@
             <button class="profile__add-element" type="button"></button>
           </div>  
         </section>
-
         <section class="elements">
-            <div class="element">
-              <img class="element__image" src="./images/italy.jpg" alt="побережье италии">
-              <div class="element__label">
-                  <h2 class="element__title">Побережье Италии</h2>
-                  <button class="element__like" type="button"></button>
-              </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/tyrkey.jpg" alt="побережье турции">
-                <div class="element__label">
-                    <h2 class="element__title">Побережье Турции</h2>
-                    <button class="element__like" type="button"></button>
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/kazan.jpg" alt="казанский кремль">
-                <div class="element__label">
-                    <h2 class="element__title">Казанский Кремль</h2>
-                    <button class="element__like" type="button"></button>
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/kazanskii-sobor.jpg" alt="Казанский собор. Санкт-Петербург">
-                <div class="element__label">
-                    <h2 class="element__title">Казанский Собор</h2>
-                    <button class="element__like" type="button"></button>
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/krasnaya-polyana.jpg" alt="Красная поляна">
-                <div class="element__label">
-                    <h2 class="element__title">Красная Поляна</h2>
-                    <button class="element__like" type="button"></button>
-                </div>
-            </div>
-            <div class="element">
-                <img class="element__image" src="./images/siberia.jpg" alt="Где-то в западной сибири зимой">
-                <div class="element__label">
-                    <h2 class="element__title">Югорск</h2>
-                    <button class="element__like" type="button"></button>
-                </div>
-            </div>
         </section>
-        <section class="popup">
-          <div class="popup__overlay">  
-            <div class="popup__container">
+        <section class="popup popup_type_edit-account">
+          <div class="popup__container">
             <h2 class="popup__heading">Редактировать профиль</h2>
               <form class="popup__form" name="edit-profile">
                 <fieldset class="popup__input-container">
@@ -81,18 +37,48 @@
                   <input type="text" name ="profileDesc" class="popup__item popup__item_type_job">
                 </fieldset>
                 <fieldset class="popup__handlers">
-                    <input type="submit" value="Сохранить" class="popup__button">
+                    <input type="submit" id="editProfilebtn" value="Сохранить" class="popup__button">
                 </fieldset>
               </form> 
               <button class="popup__closed" type="button"></button> 
-            </div>
-          </div>      
-        </section>   
+          </div>
+        </section>
+        <section class="popup popup_type_addcard">
+          <div class="popup__container">
+            <h2 class="popup__heading">Новое место</h2>
+              <form class="popup__form" name="add-card">
+                <fieldset class="popup__input-container">
+                  <input type="text" name ="placeName" placeholder="Название" class="popup__item popup__item_type_place-name">
+                  <input type="text" name ="placeLink" placeholder="Ссылка на картинку" class="popup__item popup__item_type_place-link">
+                </fieldset>
+                <fieldset class="popup__handlers">
+                    <input type="submit" id="createCardbtn" value="Создать" class="popup__button">
+                </fieldset>
+              </form> 
+              <button class="popup__closed" type="button"></button> 
+          </div>
+        </section>
+        <section class="popup popup_type_image">
+          <div class="popup__container popup__container_type_image">
+              <img class="popup__image">
+              <p class="popup__image-title"></p>
+              <button class="popup__closed popup__closed_type_image" type="button"></button>  
+          </div>
+        </section>
     </main>
-    
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-  <script src="./scripts/index.js"></script>  
+  <template id="card-template">
+      <div class="element">
+        <img class="element__image">
+        <div class="element__label">
+          <h2 class="element__title"></h2>
+          <button class="element__like" type="button"></button>
+        </div>
+        <button class="element__delete-element"></button>
+      </div>
+  </template>  
+  <script src="./scripts/index.js"></script>
   </body>
 </html>    
