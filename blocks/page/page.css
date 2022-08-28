@@ -3,8 +3,6 @@
   max-width: 1280px;
   margin: auto;
   position: relative;
-  
-
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -17,6 +15,5 @@
 @media screen and (max-width: 320px) {
   .page {
     max-width: 320px;
-    
   }
 }

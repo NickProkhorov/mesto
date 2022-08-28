@@ -1,6 +1,4 @@
 
-const page = document.querySelector('.page');
-
 const popupEditprofile = document.querySelector('.popup_type_edit-account');
 const profileFormEdit = popupEditprofile.querySelector('.popup__form');
 const inputName = popupEditprofile.querySelector('.popup__item_type_name');

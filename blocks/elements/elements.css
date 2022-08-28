@@ -10,13 +10,8 @@
     padding-right: 19px;
 }
 
- 
-
-
 @media screen and (max-width: 320px) {
     .elements {
       padding-top: 36px;
-      
     }
-        
   }

@@ -5,9 +5,16 @@
     border-bottom: 1px solid rgba(84, 84, 84, .7);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 920px) {
+  .header {
+    padding-top: 28px;
+    max-width: calc(100% - 19px * 2);
+  }
+}
+
+@media screen and (max-width: 492px) {
     .header {
       padding-top: 28px;
-      max-width: 320px;
+      max-width: 100%;
     }
   }
