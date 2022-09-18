@@ -67,6 +67,12 @@ function setProfileDesc() {
 
 function popupOpen(modal) {
     modal.classList.add('popup_opened');
+
+    document.addEventListener('keydown', function(evt) {
+        if (evt.key === "Escape") {
+            popupClose(modal);
+        }
+    });
 } 
 
 function popupClose(modal) {
@@ -157,6 +163,14 @@ cardFormClose.addEventListener('click', function(){
 popupImageClose.addEventListener('click', function(){
     popupClose(popupImage);
 });
+
+document.addEventListener('click', function(evt){
+    if (evt.target.classList.contains('popup')) {
+        popupClose(evt.target);
+    }
+});
+
+
 
 
 

@@ -31,10 +31,12 @@
         <section class="popup popup_type_edit-account">
           <div class="popup__container">
             <h2 class="popup__heading">Редактировать профиль</h2>
-              <form class="popup__form" name="edit-profile">
+              <form class="popup__form" name="edit-profile" novalidate>
                 <fieldset class="popup__input-container">
-                  <input type="text" name ="profileName" class="popup__item popup__item_type_name">
-                  <input type="text" name ="profileDesc" class="popup__item popup__item_type_job">
+                  <input id="name-input" type="text" name ="profileName" class="popup__item popup__item_type_name" minlength="2" maxlength="40" required>
+                  <span class="popup__input-error name-input-error"></span>
+                  <input id="job-input" type="text" name ="profileDesc" class="popup__item popup__item_type_job" minlength="2" maxlength="200" required>
+                  <span class="popup__input-error job-input-error"></span>
                 </fieldset>
                 <fieldset class="popup__handlers">
                     <input type="submit" id="editProfilebtn" value="Сохранить" class="popup__button">
@@ -46,10 +48,12 @@
         <section class="popup popup_type_addcard">
           <div class="popup__container">
             <h2 class="popup__heading">Новое место</h2>
-              <form class="popup__form" name="add-card">
+              <form class="popup__form" name="add-card" novalidate>
                 <fieldset class="popup__input-container">
-                  <input type="text" name ="placeName" placeholder="Название" class="popup__item popup__item_type_place-name">
-                  <input type="text" name ="placeLink" placeholder="Ссылка на картинку" class="popup__item popup__item_type_place-link">
+                  <input id="place-input" type="text" name ="placeName" placeholder="Название" class="popup__item popup__item_type_place-name" minlength="2" maxlength="30" required>
+                  <span class="popup__input-error place-input-error"></span>
+                  <input id="url-input" type="url" name ="placeLink" placeholder="Ссылка на картинку" class="popup__item popup__item_type_place-link" required>
+                  <span class="popup__input-error url-input-error">Введите адрес сайта.</span>
                 </fieldset>
                 <fieldset class="popup__handlers">
                     <input type="submit" id="createCardbtn" value="Создать" class="popup__button">
@@ -80,5 +84,6 @@
       </div>
   </template>  
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
   </body>
 </html>    
