@@ -1,13 +1,13 @@
 import { Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
+import { objSettings } from './constants.js'
+import { initialCards } from './initialCards.js'
 
 const popups = document.querySelectorAll('.popup');
 
 const popupEditprofile = document.querySelector('.popup_type_edit-account');
 const inputName = popupEditprofile.querySelector('.popup__item_type_name');
 const inputJob = popupEditprofile.querySelector('.popup__item_type_job');
-const btnOpenFormEdProfile = popupEditprofile.querySelector('.popup__button');
-
 const popupImage = document.querySelector('.popup_type_image');
 
 const profileEdit = document.querySelector('.profile__edit-profile');
@@ -15,53 +15,14 @@ const profileName = document.querySelector('.profile__title');
 const profileJob = document.querySelector('.profile__subtitle');
 
 const popupAddCardOpen = document.querySelector('.profile__add-element');
-
 const popupAddcard = document.querySelector('.popup_type_addcard');
 const cardInputTitle = popupAddcard.querySelector('.popup__item_type_place-name');
 const cardInputLink = popupAddcard.querySelector('.popup__item_type_place-link');
-const btnOpenFormAddCard = popupAddcard.querySelector('.popup__button');
 
 const cardContainer = document.querySelector('.elements');
-
 const cardTemplate = document.querySelector('#card-template').content;
 
 const cardElementLink = document.querySelector('.element__image');
-
-const initialCards = [
-    {
-        name: 'Италия',
-        link: './images/italy.jpg'
-    },
-    {
-        name: 'Турция',
-        link: './images/tyrkey.jpg'
-    },
-    {
-        name: 'Казанский Кремль',
-        link: './images/kazan.jpg'
-    },
-    {
-        name: 'Санкт-Петербург',
-        link: './images/kazanskii-sobor.jpg'
-    },
-    {
-        name: 'Красная Поляна',
-        link: './images/krasnaya-polyana.jpg'
-    },
-    {
-        name: 'Югорск',
-        link: './images/siberia.jpg'
-    }
-];
-
-const objSettings = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__item',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_inactive',
-    inputErrorClass: 'popup__item_type_error',
-    errorClass: 'popup__input-error_active'
-  };
 
 const profileFormEdit = popupEditprofile.querySelector('.popup__form');
 const formAddCard = popupAddcard.querySelector('.popup__form');
@@ -99,47 +60,38 @@ function closePopup(modal) {
     document.removeEventListener('keydown', handleEsc);
 }
 
-function clearErrors(modal) {
-    const popupErrors = Array.from(modal.querySelectorAll('.popup__input-error'));
-    const popupInputs = Array.from(modal.querySelectorAll('.popup__item'));
-    popupErrors.forEach(function (item) {
-        if (item.classList.contains('popup__input-error_active')) {
-            item.classList.remove('popup__input-error_active');
-            item.textContent = '';
-        };
-    });
-    popupInputs.forEach(function (item) {
-        if (item.classList.contains('popup__item_type_error')) {
-            item.classList.remove('popup__item_type_error');
-        };
-    });
+function renderCard(data, Template, action, nodeElement) {
+   const card = new Card(data, Template, action, nodeElement);
+   return card.createCard();
 }
 
 initialCards.forEach((item) => {
-   const card = new Card(item, cardTemplate, openPopup);
-   cardContainer.append(card.createCard());
-     
+    cardContainer.append(renderCard(item, cardTemplate, openPopup, popupImage));
 });
 
 popupAddcard.addEventListener('submit', function (evt) {
     evt.preventDefault();
-    const card = new Card({name: cardInputTitle.value, link: cardInputLink.value }, cardTemplate);
-    cardContainer.prepend(card.createCard());
+    cardContainer.prepend(renderCard({name: cardInputTitle.value, link: cardInputLink.value }, cardTemplate, openPopup, popupImage));
     closePopup(popupAddcard);
     formAddCard.reset();
-    btnOpenFormAddCard.disabled = true;
-    btnOpenFormAddCard.classList.add('popup__button_inactive');
+    cardFormValidator.deactivateButtonState();
 });
 
 profileEdit.addEventListener('click', function () {
     setPopupInputValue();
-    btnOpenFormEdProfile.disabled = true;
-    btnOpenFormEdProfile.classList.add('popup__button_inactive');
-    clearErrors(popupEditprofile);
+    profileFormValidator.deactivateButtonState();
+    const popupInputs = Array.from(popupEditprofile.querySelectorAll('.popup__item'));
+    popupInputs.forEach((inputElement) => {
+        profileFormValidator.hideInputError(inputElement);
+    });
     openPopup(popupEditprofile);
 });
 
 popupAddCardOpen.addEventListener('click', function () {
+    const popupInputs = Array.from(popupAddcard.querySelectorAll('.popup__item'));
+    popupInputs.forEach((inputElement) => {
+        cardFormValidator.hideInputError(inputElement);
+    });
     openPopup(popupAddcard);
 });
 
@@ -159,15 +111,3 @@ popups.forEach((popup) => {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-

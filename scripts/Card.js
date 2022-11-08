@@ -1,13 +1,13 @@
 export class Card {
-    constructor(data, templateSelector, openPopup) {
+    constructor(data, templateSelector, openPopup, popupImage) {
         this._name = data.name;
         this._link = data.link;
         this._templateSelector = templateSelector;
        
         this._popupScaleImage = document.querySelector('.popup__image');
         this._popupImageTitle = document.querySelector('.popup__image-title');
-        this._popupImage = document.querySelector('.popup_type_image');
         
+        this._popupImage = popupImage;
         this._openPopup = openPopup;
     }
     
@@ -33,6 +33,7 @@ export class Card {
 
     _removeCardElement(){
         this._element.remove();
+        this._element = null;
     }
 
     _likeCardElement(){

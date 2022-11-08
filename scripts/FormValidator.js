@@ -20,7 +20,7 @@
      errorElement.classList.add(this._errorClass);
   }
 
-  _hideInputError(inputElement) {
+  hideInputError(inputElement) {
      const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
      inputElement.classList.remove(this._inputErrorClass);
      errorElement.classList.remove(this._errorClass);
@@ -31,7 +31,7 @@
    if (!inputElement.validity.valid) {
      this._showInputError(inputElement, inputElement.validationMessage);
    } else {
-     this._hideInputError(inputElement);
+     this.hideInputError(inputElement);
    }
   }
 
@@ -42,31 +42,30 @@
   }
    
  _setEventListeners(){
-     this._inputList.forEach((inputElement) => {
+    this._toggleButtonState(); 
+    this._inputList.forEach((inputElement) => {
        inputElement.addEventListener('input', () => {
          this._checkInputValidity(inputElement);
          this._toggleButtonState();
          });
        });
-
-       this._formElement.addEventListener('submit', (evt) => {
-         evt.preventDefault();
-          
-    });
-  }
-
+    }
+  
   _toggleButtonState(){
-   if(this._hasInvalidInput()){
-     this._buttonElement.classList.add(this._inactiveButtonClass);
-     this._buttonElement.disabled = true;
+   if(this._hasInvalidInput()) {
+      this.deactivateButtonState();
    } else {
      this._buttonElement.classList.remove(this._inactiveButtonClass);
      this._buttonElement.disabled = false;
    }
+}
+
+deactivateButtonState(){
+     this._buttonElement.classList.add(this._inactiveButtonClass);
+     this._buttonElement.disabled = true;
 }
  
 enableValidation(){
    this._setEventListeners();
  }
 }
-
