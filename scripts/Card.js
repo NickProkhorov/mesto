@@ -15,7 +15,7 @@ export class Card {
         const cardElement = this._templateSelector.querySelector('.element').cloneNode(true);
         return cardElement;
     }
-    createCard(){
+    generateCard(){
         this._element = this._getTemplate();
 
         this._cardElementTitle = this._element.querySelector('.element__title');

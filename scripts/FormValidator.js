@@ -20,18 +20,24 @@
      errorElement.classList.add(this._errorClass);
   }
 
-  hideInputError(inputElement) {
+  _hideInputError(inputElement) {
      const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
      inputElement.classList.remove(this._inputErrorClass);
      errorElement.classList.remove(this._errorClass);
      errorElement.textContent = '';
+  }
+
+  resetFormErrors(){
+     this._inputList.forEach((inputElement) => {
+       this._hideInputError(inputElement);
+     });
   }
   
   _checkInputValidity(inputElement) {
    if (!inputElement.validity.valid) {
      this._showInputError(inputElement, inputElement.validationMessage);
    } else {
-     this.hideInputError(inputElement);
+     this._hideInputError(inputElement);
    }
   }
 
