@@ -1,14 +1,10 @@
-export class Card {
-    constructor(data, templateSelector, openPopup, popupImage) {
+export default class Card {
+    constructor(data, templateSelector, openPopup) {
         this._name = data.name;
         this._link = data.link;
         this._templateSelector = templateSelector;
        
-        this._popupScaleImage = document.querySelector('.popup__image');
-        this._popupImageTitle = document.querySelector('.popup__image-title');
-        
-        this._popupImage = popupImage;
-        this._openPopup = openPopup;
+        this._handleOpenImgPopup = openPopup;
     }
     
     _getTemplate() {
@@ -39,17 +35,10 @@ export class Card {
     _likeCardElement(){
         this._cardElementLike.classList.toggle('element__like_type_active');
     }
-    
-    _openedImagePopup(){
-        this._popupScaleImage.src = this._link;
-        this._popupScaleImage.alt = this._name;
-        this._popupImageTitle.textContent = this._name
-        this._openPopup(this._popupImage);
-    }
-
+   
     _setEventListeners(){
-        this._cardElementImage.addEventListener('click', () => this._openedImagePopup()); // открыть popup
-        this._cardElementRemove.addEventListener('click', () => this._removeCardElement()); // событие на кнопку "удалить карточку"
-        this._cardElementLike.addEventListener('click', () => this._likeCardElement());//событие на like-элемент
+        this._cardElementImage.addEventListener('click', () => this._handleOpenImgPopup(this._name, this._link));
+        this._cardElementRemove.addEventListener('click', () => this._removeCardElement());
+        this._cardElementLike.addEventListener('click', () => this._likeCardElement());
     }
 }

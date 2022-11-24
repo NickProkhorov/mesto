@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
   <title>Место</title>
 </head>
   <body class="page">
@@ -14,7 +13,7 @@
         <section class="profile">
           <div class="profile__container">
             <div class="profile__label">
-              <img class="profile__avatar" src="./images/jak.jpg" alt="Аватар путешественника">
+              <img class="profile__avatar" src ="<%=require('./images/jak.jpg')%>" alt="Аватар путешественника"> 
               <div class="profile__info">
                 <div class="profile__info-title">
                   <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -83,6 +82,5 @@
         <button class="element__delete-element"></button>
       </div>
   </template>  
-  <script type="module" src="./scripts/index.js" defer></script>
   </body>
 </html>    
