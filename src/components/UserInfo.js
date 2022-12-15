@@ -2,18 +2,19 @@ export default class UserInfo {
     constructor(user){
         this._name = user.name;
         this._about = user.about;
+        this._avatar = document.querySelector('.profile__avatar');
     }
     
     getUserInfo(){
-        const userProfile = {};
-        userProfile.name = this._name.textContent.trim();
-        userProfile.about = this._about.textContent.trim();
-
-        return userProfile;
+        return {
+            name: this._name.textContent.trim(),
+            about: this._about.textContent.trim()
+        };
     }
 
-    setUserInfo(newUser){ 
-        this._name.textContent = newUser.name;
-        this._about.textContent = newUser.about;
+    setUserInfo(newUserData) { 
+        this._name.textContent = newUserData.name;
+        this._about.textContent = newUserData.about;
+        this._avatar.src = newUserData.avatar;
     }
 }

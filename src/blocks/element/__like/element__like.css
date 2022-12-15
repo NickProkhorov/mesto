@@ -6,6 +6,7 @@
     width: 22px;
     height: 19px;
     align-self: center;
+    padding: 0;
 }
 
 .element__like:hover {
