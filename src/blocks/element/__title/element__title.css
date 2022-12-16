@@ -11,5 +11,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    
+
+    position: absolute;
+    bottom: 31px;
+    left: 21px;
 }

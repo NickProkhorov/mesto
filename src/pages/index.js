@@ -159,8 +159,9 @@ popupAddCardOpen.addEventListener('click', function () {
 });
 
 profileAvatar.addEventListener('click', function () {
-    cardFormValidator.resetFormErrors();
-    popupUpdateAvatar.open();    
+    profileFormUpdAvaValidator.deactivateButtonState();
+    profileFormUpdAvaValidator.resetFormErrors();
+    popupUpdateAvatar.open();
 });
 
 profileEdit.addEventListener('click', function () {

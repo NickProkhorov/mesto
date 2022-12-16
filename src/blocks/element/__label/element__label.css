@@ -1,7 +1,3 @@
 .element__label {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 25px 20px 31px;
-    
+    min-height: 79px;    
 }

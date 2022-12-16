@@ -15,7 +15,7 @@
             <div class="profile__label">
               <button class="profile__edit-img" type="button"></button>
               <div class="profile__avatar-overlay">
-                <img class="profile__avatar" alt="Аватар путешественника">
+                <img class="profile__avatar" alt="Аватар">
               </div>
               <div class="profile__info">
                 <div class="profile__info-title">
@@ -85,11 +85,11 @@
             <h2 class="popup__heading">Обновить аватар</h2>
               <form class="popup__form" name="add-card" novalidate>
                 <fieldset class="popup__input-container">
-                  <input id="url-input-avatar" type="url" name ="avatar" placeholder="Ссылка на картинку" class="popup__item popup__item_type_place-link" required>
-                  <span class="popup__input-error popup__input-error_type_scnd-message url-input-error"></span>
+                  <input id="url-ava-input" type="url" name ="avatar" placeholder="Ссылка на картинку" class="popup__item popup__item_type_place-link" required>
+                  <span class="popup__input-error url-ava-input-error"></span>
                 </fieldset>
                 <fieldset class="popup__handlers">
-                    <input type="submit" id="changeAvatar" value="Сохранить" class="popup__button">
+                    <input type="submit" id="createCardbtn" value="Сохранить" class="popup__button">
                 </fieldset>
               </form> 
               <button class="popup__closed" type="button"></button> 
@@ -102,13 +102,13 @@
   <template id="card-template">
       <div class="element">
         <img class="element__image">
-        <div class="element__label">
+        <div class="element__label">  
           <h2 class="element__title"></h2>
           <div class="element__like-area">
             <button class="element__like" type="button"></button>
             <span class="element__like-counter"></span>
           </div>
-        </div>
+        </div>  
         <button class="element__delete-element"></button>
       </div>
   </template>  
